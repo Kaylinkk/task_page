@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap");
+
+:root {
+  /* color */
+  --NavBar-color: #7d7dff;
+  --dark-purple: #9c9cd3;
+
+  /* font */
+  --input-username: "Lato", sans-serif;
+  --title: "Roboto", sans-serif;
+
+  /* size */
+  --title-size: 30px;
+  --content-size: 30px;
+  --small-size: 20px;
+}
+
+.Box {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  padding-top: 50px;
+}
+
+.Greeting {
+  font-family: var(--title);
+  font-size: var(--title-size);
+}
+
+.clock {
+  font-family: var(--title);
+  font-size: var(--small-size);
+  line-height: 50px;
+}

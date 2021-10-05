@@ -1,0 +1,40 @@
+:root {
+  /* color */
+  --NavBar-color: #7d7dff;
+  --dark-purple: #9c9cd3;
+
+  /* font */
+  --input-username: "Lato", sans-serif;
+  --title: "Roboto", sans-serif;
+  --title-two: "Ubuntu", sans-serif;
+
+  /* size */
+  --large-size: 60px;
+  --midium-size: 40px;
+  --content-size: 30px;
+  --small-size: 20px;
+}
+
+.buttonBox {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3rem;
+  width: 30rem;
+  height: 6rem;
+  background-color: var(--dark-purple);
+  font-family: var(--title);
+  font-size: var(--content-size);
+  color: whitesmoke;
+  transition: 200ms linear, background-color 200ms;
+}
+
+.button:hover {
+  background-color: var(--NavBar-color);
+}
