@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./MainPage.module.css";
 
-function MainPage({ history }) {
+function MainPage() {
+  document.body.style.backgroundColor = "#F1F1F9";
   const handleonClick = () => {
     document.location.href = "/login";
   };

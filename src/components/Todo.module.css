@@ -72,6 +72,12 @@
   cursor: pointer;
 }
 
+.unchecked,
+.checked {
+  position: relative;
+  top: 3px;
+}
+
 .svg:hover {
   fill: var(--NavBar-color);
 }
@@ -89,4 +95,9 @@
 
 input[type="checkbox"] {
   display: none;
+}
+
+label span {
+  position: relative;
+  left: 10px;
 }

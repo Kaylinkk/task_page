@@ -33,7 +33,7 @@ function FinishedTask(props) {
           task.isChecked && (
             <div className={styles.taskbox} key={task.id}>
               <label>
-                <Checked width="20" height="20" />
+                <Checked className={styles.checked} width="20" height="20" />
                 <input type="checkbox" onChange={() => handleChange(task)} />
                 <span>{task.data}</span>
               </label>

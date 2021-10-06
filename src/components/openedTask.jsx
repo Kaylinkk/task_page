@@ -34,7 +34,11 @@ function OpenTask(props) {
           !task.isChecked && (
             <div className={styles.taskbox} key={task.id}>
               <label>
-                <UnChecked width="20" height="20" />
+                <UnChecked
+                  className={styles.unchecked}
+                  width="20"
+                  height="20"
+                />
                 <input type="checkbox" onChange={() => handleChange(task)} />
                 <span>{task.data}</span>
               </label>

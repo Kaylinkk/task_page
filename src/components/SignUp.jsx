@@ -19,7 +19,7 @@ function Login(props) {
     <>
       <div className={styles.box}>
         <form onSubmit={handleSubmit}>
-          <h1 className={styles.title}>Log In</h1>
+          <h1 className={styles.title}>Sign Up</h1>
 
           <Input
             Icon={User}
@@ -43,7 +43,7 @@ function Login(props) {
 
           <Link to="/todo">
             <button className={styles.button} type="button">
-              Log In
+              Create Account
             </button>
           </Link>
         </form>
