@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./NavBar.module.css";
-
-
+import { ReactComponent as Logo } from "../src/img/logoTransparent.svg";
+import cx from 'classnames'
 
 function NavBar() {
 
@@ -16,13 +16,15 @@ function NavBar() {
 
 
 
-        <div className={styles.navbar}>
+        <div className={cx(styles.navbar, styles.clearfix)}>
 
-            <button onClick={onHandleClickHome} className={styles.btn}>Home</button>
-            <button onClick={onHandleClick} className={styles.btn}>Sign Up</button>
+            <Logo className="logo" width="200" />
+            <ul>
 
+                <li onClick={onHandleClick} >Sign Up</li>
+                <li onClick={onHandleClickHome} >Home</li>
+            </ul>
         </div>
-
     )
 }
 
