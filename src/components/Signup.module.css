@@ -2,6 +2,7 @@
   /* color */
   --NavBar-color: #7d7dff;
   --dark-purple: #9c9cd3;
+  --skyblue: #ddeaf9;
 
   /* font */
   --input-username: "Lato", sans-serif;
@@ -18,7 +19,7 @@
 .box {
   box-sizing: border-box;
   width: 45%;
-  height: 60%;
+  height: 70%;
   border-radius: 5rem;
   background-color: white;
   position: absolute;
@@ -46,9 +47,7 @@ form svg {
   right: 1.3rem;
 }
 
-.title {
-  position: relative;
-  bottom: 2rem;
+.h1 {
   font-family: var(--title-two);
   width: 80%;
   text-align: center;
@@ -63,8 +62,8 @@ form svg {
   border-radius: 3rem;
   width: 34rem;
   height: 5rem;
-  background-color: var(--dark-purple);
+  background-color: var(--skyblue);
   font-family: var(--title);
   font-size: var(--content-size);
-  color: whitesmoke;
+  color: black;
 }
