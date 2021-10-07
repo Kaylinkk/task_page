@@ -5,6 +5,10 @@ import styles from "./NavBar.module.css";
 
 function NavBar() {
 
+
+    const onHandleClickHome = () => {
+        document.location.href = "/";
+    }
     const onHandleClick = () => {
         document.location.href = "/signup";
     }
@@ -14,8 +18,8 @@ function NavBar() {
 
         <div className={styles.navbar}>
 
-
-            <button onClick={onHandleClick} className={styles.signup}>Sign Up</button>
+            <button onClick={onHandleClickHome} className={styles.btn}>Home</button>
+            <button onClick={onHandleClick} className={styles.btn}>Sign Up</button>
 
         </div>
 
