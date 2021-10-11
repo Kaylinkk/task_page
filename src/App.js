@@ -9,19 +9,19 @@ import SignUp from "./components/SignUp";
 
 
 
+
 function App() {
-  // document.body.style.backgroundColor = "transparent";
 
 
   return (
     <>
-      <NavBar />
       <Router>
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/todo" component={Todo} />
+
         </Switch>
       </Router>
     </>

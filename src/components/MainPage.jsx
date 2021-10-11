@@ -20,6 +20,7 @@ function MainPage() {
           <li></li>
           <li></li>
           <li></li>
+          <li></li>
         </ul>
 
         <div className={styles.buttonBox}>

@@ -12,6 +12,9 @@ function NavBar() {
     const onHandleClick = () => {
         document.location.href = "/signup";
     }
+    const onHandleClickProfile = () => {
+        document.location.href = "/profile";
+    }
     return (
 
 
@@ -20,9 +23,10 @@ function NavBar() {
 
             <Logo className="logo" width="200" />
             <ul>
-
+                <li onClick={onHandleClickProfile}>Profile</li>
                 <li onClick={onHandleClick} >Sign Up</li>
                 <li onClick={onHandleClickHome} >Home</li>
+
             </ul>
         </div>
     )

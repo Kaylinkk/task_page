@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Input from "./Input";
 import { ReactComponent as User } from "../img/person.svg";
 import { ReactComponent as Password } from "../img/password.svg";
+import NavBar from "../NavBar";
 function Login(props) {
   document.body.style.backgroundColor = "#9C9CD3";
   const [username, setUsername] = useState("");
@@ -17,6 +18,7 @@ function Login(props) {
 
   return (
     <>
+      <NavBar />
       <div className={styles.box}>
         <form onSubmit={handleSubmit}>
           <h1 className={styles.title}>Log In</h1>
