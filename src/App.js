@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Switch, Link, BrowserRouter } from "react-router-dom";
-import NavBar from './NavBar';
+import NavBar from './components/NavBar';
 import Todo from './components/Todo';
 import Login from './components/Login';
 import MainPage from "./components/MainPage";
 import SignUp from "./components/SignUp";
-
+import "./components/App.css"
 
 
 

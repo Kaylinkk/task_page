@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styles from "./MainPage.module.css";
 
 function MainPage() {
   const handleonClick = () => {
@@ -8,8 +7,8 @@ function MainPage() {
 
   return (
     <>
-      <div className={styles.backgroundContainer}>
-        <ul className={styles.material}>
+      <div className="MainBackground">
+        <ul className="MainPageMaterials">
           <li></li>
           <li></li>
           <li></li>
@@ -23,8 +22,8 @@ function MainPage() {
           <li></li>
         </ul>
 
-        <div className={styles.buttonBox}>
-          <button onClick={handleonClick} className={styles.button}>
+        <div className="MainButtonBox">
+          <button onClick={handleonClick} className="MainButton">
             Log In
           </button>
         </div>

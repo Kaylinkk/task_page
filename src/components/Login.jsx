@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Login.module.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Input from "./Input";
 import { ReactComponent as User } from "../img/person.svg";
 import { ReactComponent as Password } from "../img/password.svg";
-import NavBar from "../NavBar";
+import NavBar from "../components/NavBar";
 function Login(props) {
   document.body.style.backgroundColor = "#9C9CD3";
   const [username, setUsername] = useState("");
@@ -19,13 +18,13 @@ function Login(props) {
   return (
     <>
       <NavBar />
-      <div className={styles.box}>
+      <div className="box Login-box">
         <form onSubmit={handleSubmit}>
-          <h1 className={styles.title}>Log In</h1>
+          <h1 className="Login-title">Log In</h1>
 
           <Input
             Icon={User}
-            className={styles.inputbox}
+            className="Login-inputbox"
             value={username}
             setValue={setUsername}
             placeholder="username"
@@ -35,7 +34,7 @@ function Login(props) {
 
           <Input
             Icon={Password}
-            className={styles.inputbox}
+            className="Login-inputbox"
             setValue={setPassword}
             value={password}
             placeholder="password"
@@ -44,7 +43,7 @@ function Login(props) {
           />
 
           <Link to="/todo">
-            <button className={styles.button} type="button">
+            <button className="Login-button" type="button">
               Log In
             </button>
           </Link>
