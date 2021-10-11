@@ -1,18 +1,17 @@
-import { BrowserRouter as Router, Route, Switch, Link, BrowserRouter } from "react-router-dom";
-import NavBar from './NavBar';
-import Todo from './components/Todo';
-import Login from './components/Login';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  BrowserRouter,
+} from "react-router-dom";
+import NavBar from "./NavBar";
+import Todo from "./components/Todo";
+import Login from "./components/Login";
 import MainPage from "./components/MainPage";
 import SignUp from "./components/SignUp";
 
-
-
-
-
-
 function App() {
-
-
   return (
     <>
       <Router>
@@ -21,7 +20,6 @@ function App() {
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/todo" component={Todo} />
-
         </Switch>
       </Router>
     </>
