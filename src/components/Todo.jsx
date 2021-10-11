@@ -11,6 +11,8 @@ function Todo(props) {
   return (
     <>
       <NavBar />
+      <Greeting></Greeting>
+      <NavBar />
       <Greeting />
       <InputTask taskList={taskList} setTaskList={setTaskList} />
       <OpenTask taskList={taskList} setTaskList={setTaskList} />
