@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Input.module.css";
 
 function Input({
   placeholder,
@@ -10,7 +9,7 @@ function Input({
   setValue,
 }) {
   return (
-    <div className={styles.inputContainer}>
+    <div className="input-Container">
       <Icon></Icon>
       <input
         placeholder={placeholder}

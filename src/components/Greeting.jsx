@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import styles from "./Greeting.module.css";
-
 
 function Greeting() {
   return (
     <>
-      <div className={styles.Box}>
-        <div className={styles.Greeting}>what is in your mind?</div>
+      <div className="Greeting-box">
+        <div className="Greeting-welcomeSentence">what is in your mind?</div>
         <ClockContainer />
       </div>
-
     </>
   );
 }
@@ -27,8 +24,6 @@ function ClockContainer() {
     };
   }, []);
 
-  return (
-      <div className={styles.clock}> {time.format('llll') }</div>
-  );
+  return <div className="Greeting-clock"> {time.format("llll")}</div>;
 }
 export default Greeting;

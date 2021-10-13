@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Todo.module.css";
 import { ReactComponent as Delete } from "../img/delete.svg";
 import { ReactComponent as UnChecked } from "../img/unchecked.svg";
 function OpenTask(props) {
@@ -20,22 +19,22 @@ function OpenTask(props) {
   };
 
   return (
-    <div className={styles.taskBox}>
-      <div className={styles.openTask}>
+    <div className="OpenedTask-Taskbox">
+      <div className="OpendedTask-opentask">
         OPEN TASK
-        <div className={styles.openTask_checkbox}>
-          <input className={styles.cb1} type="checkbox" />
-          <span className={styles.selectAll}>Select All</span>
+        <div>
+          <input className="OpenedTask-checkbox" type="checkbox" />
+          <span className="OpenedTask-selectAll">Select All</span>
         </div>
       </div>
 
       {props.taskList.map((task) => {
         return (
           !task.isChecked && (
-            <div className={styles.taskbox} key={task.id}>
+            <div className="OpenedTask-Task" key={task.id}>
               <label>
                 <UnChecked
-                  className={styles.unchecked}
+                  className="OpenedTask-unchecked"
                   width="20"
                   height="20"
                 />
@@ -43,10 +42,14 @@ function OpenTask(props) {
                 <span>{task.data}</span>
               </label>
               <button
-                className={styles.button}
+                className="OpenedTask-button"
                 onClick={() => RemoveTask(task.id)}
               >
-                <Delete className={styles.svg} width="20" height="20"></Delete>
+                <Delete
+                  className="openTask-Trashcan"
+                  width="20"
+                  height="20"
+                ></Delete>
               </button>
             </div>
           )

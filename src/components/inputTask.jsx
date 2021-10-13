@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import styles from "./Todo.module.css";
 
 function InputTask({ taskList, setTaskList }) {
   const [currentItem, setCurrentItem] = useState("");
@@ -15,13 +14,13 @@ function InputTask({ taskList, setTaskList }) {
   };
 
   return (
-    <form onSubmit={HandleSubmit} className={styles.box}>
+    <form onSubmit={HandleSubmit} className="InputTask-box">
       <input
         value={currentItem}
         onChange={HandleChange}
         placeholder="Enter task here"
         type="text"
-        className={styles.input}
+        className="InputTask-input"
         name="task"
         required
       />

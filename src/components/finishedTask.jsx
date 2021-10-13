@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Todo.module.css";
 import { ReactComponent as Delete } from "../img/delete.svg";
 import { ReactComponent as Checked } from "../img/checkbox.svg";
 function FinishedTask(props) {
@@ -20,31 +19,35 @@ function FinishedTask(props) {
   };
 
   return (
-    <div className={styles.taskBox}>
-      <div className={styles.finishedTask}>
+    <div className="Finished-taskBox">
+      <div className="FinishedTask-Finishtask">
         FINISHED TASK
-        <div className={styles.finishedTask_checkbox}>
-          <input className={styles.cb1} type="checkbox" />
-          <span className={styles.selectAll}>Select All</span>
+        <div>
+          <input className="FinishedTask-checkbox" type="checkbox" />
+          <span className="FinishedTask-selectAll">Select All</span>
         </div>
       </div>
       {props.taskList.map(
         (task) =>
           task.isChecked && (
-            <div className={styles.taskbox} key={task.id}>
+            <div className="FinishedTask-Task" key={task.id}>
               <label>
-                <Checked className={styles.checked} width="20" height="20" />
+                <Checked className="Finished-checked" width="20" height="20" />
                 <input type="checkbox" onChange={() => handleChange(task)} />
                 <span>{task.data}</span>
               </label>
 
               <button
-                className={styles.button}
+                className="Finished-button"
                 onClick={() => {
                   RemoveTask(task.id);
                 }}
               >
-                <Delete className={styles.svg} width="20" height="20"></Delete>
+                <Delete
+                  className="Finished-Trashcan"
+                  width="20"
+                  height="20"
+                ></Delete>
               </button>
             </div>
           )
