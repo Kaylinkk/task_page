@@ -8,11 +8,13 @@ function Input({
   handleChange,
   Icon,
   setValue,
+  className,
 }) {
   return (
-    <div className={styles.inputContainer}>
+    <div className="input-task-container">
       <Icon></Icon>
       <input
+        className={className}
         placeholder={placeholder}
         type={type}
         value={value}

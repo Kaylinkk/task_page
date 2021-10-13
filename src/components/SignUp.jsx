@@ -6,8 +6,8 @@ import { ReactComponent as Mail } from "../img/mail.svg";
 import { ReactComponent as User } from "../img/person.svg";
 import { ReactComponent as Password } from "../img/password.svg";
 function SignUp(props) {
-  document.body.style.background =
-    "linear-gradient(rgba(179,157,219,1) 16%, rgba(221,234,249,1) 100%) fixed";
+  // document.body.style.background =
+  //   "linear-gradient(rgba(179,157,219,1) 16%, rgba(221,234,249,1) 100%) fixed";
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");

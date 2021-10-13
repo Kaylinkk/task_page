@@ -17,15 +17,13 @@ function Login(props) {
   };
 
   return (
-    <>
+    <div className="login-page-container">
       <NavBar />
       <div className={styles.box}>
+        <h1 className={styles.title}>Log In</h1>
         <form onSubmit={handleSubmit}>
-          <h1 className={styles.title}>Log In</h1>
-
           <Input
             Icon={User}
-            className={styles.inputbox}
             value={username}
             setValue={setUsername}
             placeholder="username"
@@ -35,7 +33,6 @@ function Login(props) {
 
           <Input
             Icon={Password}
-            className={styles.inputbox}
             setValue={setPassword}
             value={password}
             placeholder="password"
@@ -43,14 +40,12 @@ function Login(props) {
             required
           />
 
-          <Link to="/todo">
-            <button className={styles.button} type="button">
-              Log In
-            </button>
-          </Link>
+          <button className={styles.button} type="button">
+            Log In
+          </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

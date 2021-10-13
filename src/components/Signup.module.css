@@ -15,7 +15,13 @@
   --content-size: 30px;
   --small-size: 20px;
 }
-
+body {
+  background: linear-gradient(
+      rgba(179, 157, 219, 1) 16%,
+      rgba(221, 234, 249, 1) 100%
+    )
+    fixed;
+}
 .box {
   box-sizing: border-box;
   width: 45%;

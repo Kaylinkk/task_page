@@ -10,10 +10,10 @@ import Todo from "./components/Todo";
 import Login from "./components/Login";
 import MainPage from "./components/MainPage";
 import SignUp from "./components/SignUp";
-
+import "./App.css";
 function App() {
   return (
-    <>
+    <div className="root-container">
       <Router>
         <Switch>
           <Route exact path="/" component={MainPage} />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/todo" component={Todo} />
         </Switch>
       </Router>
-    </>
+    </div>
   );
 }
 
