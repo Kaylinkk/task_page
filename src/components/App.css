@@ -426,3 +426,9 @@ form svg {
   position: relative;
   left: 10px;
 }
+
+@media all and (max-width: 767px) {
+  body {
+    background-color: red;
+  }
+}

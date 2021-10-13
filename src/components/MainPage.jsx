@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-
 function MainPage() {
   const handleonClick = () => {
     document.location.href = "/login";
