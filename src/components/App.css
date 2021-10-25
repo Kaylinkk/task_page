@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap");
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow: hidden;
+}
+svg {
+  width: 4vw;
+  height: 3vw;
+}
 :root {
   /* color */
   --NavBar-color: #7d7dff;
@@ -12,304 +23,66 @@
   --title-two: "Ubuntu", sans-serif;
 
   /* size */
-  --large-size: 50px;
-  --midium-size: 40px;
-  --content-size: 30px;
-  --small-size: 20px;
+  --large-size: 4vw;
+  --medium-size: 2.5vw;
+  --content-size: 1.5vw;
+  --small-size: 1vw;
 }
-
-/* MainPage */
-.MainBackground {
-  background: var(--NavBar-color);
-  background: -webkit-linear-gradient(#8f94fb, #4e54c8);
-  width: 100%;
-  height: 100vh;
+nav {
+  flex-basis: 8%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: var(--NavBar-color);
 }
-/* Main page animation  */
-.MainPageMaterials {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+.logo {
+  flex-basis: 80%;
+  padding: 0.5vw 0;
 }
-
-.MainPageMaterials li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  animation: animate 25s linear infinite;
-  bottom: -200px;
+.logo img {
+  /* width: 10vw;
+  height: 3vw; */
+  width: 10vw;
 }
-
-.MainPageMaterials li:nth-child(1) {
-  left: 25%;
-  width: 25rem;
-  height: 25rem;
-  border-radius: 50%;
-  animation-delay: 0s;
-}
-
-.MainPageMaterials li:nth-child(2) {
-  left: 10%;
-  width: 10rem;
-  height: 10rem;
-  animation-delay: 2s;
-  animation-duration: 12s;
-}
-
-.MainMaterials li:nth-child(3) {
-  left: 70%;
-  width: 30px;
-  height: 30px;
-  border-radius: 20%;
-  animation-delay: 4s;
-}
-
-.MainPageMaterials li:nth-child(4) {
-  left: 40%;
-  width: 7rem;
-  height: 7rem;
-  border-radius: 10%;
-  animation-delay: 0s;
-  animation-duration: 18s;
-}
-
-.MainPageMaterialsli:nth-child(5) {
-  left: 65%;
-  width: 3rem;
-  height: 3rem;
-  animation-delay: 0s;
-}
-
-.MainPageMaterials li:nth-child(6) {
-  left: 15%;
-  width: 6rem;
-  height: 6rem;
-  animation-delay: 3s;
-}
-
-.MainPageMaterials li:nth-child(7) {
-  left: 35%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 7s;
-}
-
-.MainPageMaterials li:nth-child(8) {
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  border-radius: 10%;
-  animation-delay: 15s;
-  animation-duration: 45s;
-}
-
-.MainPageMaterials li:nth-child(9) {
-  left: 20%;
-  width: 35px;
-  height: 35px;
-  border-radius: 30%;
-  animation-delay: 2s;
-  animation-duration: 35s;
-}
-
-.MainPageMaterials li:nth-child(10) {
-  left: 95%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 0s;
-  animation-duration: 11s;
-}
-
-.MainPageMaterials li:nth-child(11) {
-  left: 85%;
-  width: 30px;
-  height: 30px;
-  animation-delay: 3s;
-  animation-duration: 11s;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
-  }
-
-  100% {
-    transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
-    border-radius: 50%;
-  }
-}
-
-.MainButtonBox {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.MainButton {
-  cursor: pointer;
-  border: none;
-  border-radius: 3rem;
-  width: 30rem;
-  height: 6rem;
-  background-color: var(--dark-purple);
-  font-family: var(--title);
+.links {
+  text-decoration: none;
   font-size: var(--content-size);
-  color: whitesmoke;
-  transition: 200ms linear, background-color 200ms;
 }
 
-.MainButton:hover {
-  background-color: var(--NavBar-color);
-}
-
-/* Navbar */
-.Navbar-navbar {
-  display: inline-block;
-  width: 100%;
-  background-color: var(--NavBar-color);
-  height: 90px;
-  color: white;
-}
-
-.Navbar-logo {
-  height: 90px;
-  float: left;
-}
-
-.Navbar-navbar li {
-  list-style: none;
-  color: whitesmoke;
-  font-size: var(--midium-size);
-  margin: 5px 15px;
-  font-family: var(--title);
-  cursor: pointer;
-  float: right;
-  transition: background-color 200ms;
-}
-
-.Navbar-navbar li:hover {
+.links:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
   color: whitesmoke;
 }
-
-/* Login Page */
-.box,
-.Login-box {
-  box-sizing: border-box;
-  width: 45%;
-  height: 60%;
-  border-radius: 5rem;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0px 0px 2px 2px #999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Login-title {
-  position: relative;
-  bottom: 2rem;
-  font-family: var(--title-two);
-  width: 80%;
-  text-align: center;
-  font-size: var(--large-size);
-  font-weight: lighter;
-}
-
-form {
-  box-sizing: border-box;
+.todo-container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-form svg {
-  position: relative;
-  top: 1.4rem;
-  right: 1.3rem;
-}
-
-.Login-button {
-  margin-top: 2.5rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 3rem;
-  width: 34rem;
-  height: 5rem;
-  background-color: var(--dark-purple);
-  font-family: var(--title);
-  font-size: var(--content-size);
-  color: whitesmoke;
-}
-
-/* Sign Up */
-
-.box,
-.SignupBox {
-  height: 70%;
-}
-
-.signUp-title {
-  font-family: var(--title-two);
-  width: 80%;
-  text-align: center;
-  font-size: var(--large-size);
-  font-weight: lighter;
-}
-
-.signUp-inputBox {
-}
-.signUp-button {
-  margin-top: 2.5rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 3rem;
-  width: 34rem;
-  height: 5rem;
-  background-color: var(--skyblue);
-  font-family: var(--title);
-  font-size: var(--content-size);
-  color: black;
-}
-
-/* Input */
-
-.input-Container {
+.input-container {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2vw;
 }
 
-.input-Container input {
-  border-top: transparent;
-  border-left: transparent;
-  border-right: transparent;
-  border-bottom: 0.4px solid grey;
+.input-container input {
+  flex-basis: 85%;
+  height: 5vw;
+  border: none;
+  border-bottom: 1px solid grey;
   font-family: var(--input-username);
-  font-size: 30px;
+  font-size: var(--content-size);
   font-weight: bold;
-  padding: 2rem 0 1rem 0;
-  width: 30rem;
 }
-.input-Container input:focus {
+
+.input-container input:focus {
   outline: none;
 }
 
@@ -326,7 +99,7 @@ form svg {
 .InputTask-input {
   width: 100%;
   height: 30px;
-  background-color: var(--Input-background-color);
+  background-color: white;
   -moz-box-shadow: inset 0 0 1px #000000;
   -webkit-box-shadow: inset 0 0 1px #000000;
   box-shadow: inset 0 0 1px #000000;
@@ -351,84 +124,4 @@ form svg {
   font-family: var(--title);
   font-size: var(--small-size);
   line-height: 50px;
-}
-/* Open Task */
-.OpenedTask-Taskbox,
-.Finished-taskBox {
-  width: 80%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  margin-left: 10%;
-  border: 1px solid black;
-}
-
-.OpendedTask-opentask,
-.FinishedTask-Finishtask {
-  background-color: var(--NavBar-color);
-  color: white;
-  padding: 5px 10px;
-  display: flex;
-  justify-content: space-between;
-}
-.OpenedTask-checkbox,
-.FinishedTask-checkbox {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #bcbcbc;
-  cursor: pointer;
-}
-
-.OpenedTask-selectAll,
-.FinishedTask-selectAll {
-  position: relative;
-  bottom: 4px;
-}
-
-.OpenedTask-Task,
-.FinishedTask-Task {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
-}
-
-.OpenedTask-Task:nth-child(even),
-.FinishedTask-Task:nth-child(even) {
-  background-color: var(--light-grey);
-}
-
-.OpenedTask-unchecked,
-.Finished-checked {
-  position: relative;
-  top: 3px;
-}
-
-.OpenedTask-button,
-.Finished-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.openTask-Trashcan:hover,
-.Finished-Trashcan:hover {
-  fill: var(--NavBar-color);
-}
-
-.OpenedTask-Task input[type="checkbox"] {
-  display: none;
-}
-
-.OpenedTask-Task label span {
-  position: relative;
-  left: 10px;
-}
-
-@media all and (max-width: 767px) {
-  body {
-    background-color: red;
-  }
 }

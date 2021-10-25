@@ -1,0 +1,91 @@
+.inputContainer svg,
+img {
+  width: 2vw;
+  height: 2vw;
+}
+
+.inputContainer {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 10%;
+  border: 1px solid black;
+}
+
+.title {
+  background-color: var(--NavBar-color);
+  color: white;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.selectAllCheckBox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #bcbcbc;
+  cursor: pointer;
+}
+
+.selectAllCheckBoxTitle {
+  position: relative;
+  bottom: 4px;
+}
+
+.mainTodo {
+  background-color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0.75vw;
+}
+.miniTodo {
+  background-color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0.5vw;
+  padding-left: 3vw;
+}
+.label {
+  flex-basis: 95%;
+  display: flex;
+}
+.label span {
+  padding-left: 1vw;
+  align-self: center;
+}
+
+.deleteBtn,
+.addBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-basis: 4%;
+}
+
+.add .taskContainer:nth-child(even),
+.miniTodo:nth-child(even) {
+  background-color: var(--light-grey);
+  /* background-color: white; */
+}
+
+.deleteBtn:hover {
+  fill: var(--NavBar-color);
+}
+.finished {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.mainTodo:hover,
+.miniTodo:hover {
+  background: var(--skyblue);
+  color: var(--dark-purple);
+}
+
+.taskContainer input[type="checkbox"] {
+  display: none;
+}

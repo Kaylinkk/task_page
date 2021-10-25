@@ -9,7 +9,12 @@ function InputTask({ taskList, setTaskList }) {
   const HandleSubmit = (event) => {
     event.preventDefault();
     const tempList = [...taskList];
-    tempList.push({ id: taskList.length, data: currentItem, isChecked: false });
+    tempList.push({
+      id: taskList.length,
+      data: currentItem,
+      miniTodo: [],
+      isChecked: false,
+    });
     setTaskList(tempList);
   };
 

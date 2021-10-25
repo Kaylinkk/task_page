@@ -9,7 +9,7 @@ function Input({
   setValue,
 }) {
   return (
-    <div className="input-Container">
+    <div className="input-container">
       <Icon></Icon>
       <input
         placeholder={placeholder}
