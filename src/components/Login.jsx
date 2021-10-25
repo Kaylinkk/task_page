@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import React, { useState } from "react";
+
 import Input from "./Input";
 import { ReactComponent as User } from "../img/person.svg";
 import { ReactComponent as Password } from "../img/password.svg";
 import NavBar from "../components/NavBar";
+import styles from "../css/Login.module.css";
 function Login(props) {
-  document.body.style.backgroundColor = "#9C9CD3";
+  // document.body.style.backgroundColor = "#9C9CD3";
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,15 +17,15 @@ function Login(props) {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <NavBar />
-      <div className="box Login-box">
-        <form onSubmit={handleSubmit}>
-          <h1 className="Login-title">Log In</h1>
+      <div className={styles.formContainer}>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <h1 className={styles.title}>Log In</h1>
 
           <Input
             Icon={User}
-            className="Login-inputbox"
+            className={styles.input}
             value={username}
             setValue={setUsername}
             placeholder="username"
@@ -34,7 +35,7 @@ function Login(props) {
 
           <Input
             Icon={Password}
-            className="Login-inputbox"
+            className={styles.input}
             setValue={setPassword}
             value={password}
             placeholder="password"
@@ -42,14 +43,12 @@ function Login(props) {
             required
           />
 
-          <Link to="/todo">
-            <button className="Login-button" type="button">
-              Log In
-            </button>
-          </Link>
+          <button className={styles.btn} type="button">
+            Log In
+          </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

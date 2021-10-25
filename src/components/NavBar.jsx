@@ -1,25 +1,25 @@
 import React from "react";
-import { ReactComponent as Logo } from "../img/logoTransparent.svg";
+import { Link, NavLink } from "react-router-dom";
 
+import logo from "../img/logo_PNG_Transparent.png";
 function NavBar() {
-  const onHandleClickHome = () => {
-    document.location.href = "/";
-  };
-  const onHandleClick = () => {
-    document.location.href = "/signup";
-  };
-  const onHandleClickProfile = () => {
-    document.location.href = "/profile";
-  };
   return (
-    <div className="Navbar-navbar">
-      <Logo className="Navbar-logo" width="200" />
-      <ul>
-        <li onClick={onHandleClickProfile}>Profile</li>
-        <li onClick={onHandleClick}>Sign Up</li>
-        <li onClick={onHandleClickHome}>Home</li>
-      </ul>
-    </div>
+    <>
+      <nav>
+        <Link to="/" className="logo">
+          <img src={logo} alt="logo"></img>
+        </Link>
+        <NavLink to="/" className="links">
+          Home
+        </NavLink>
+        <NavLink to="/profile" className="links">
+          Profile
+        </NavLink>
+        <NavLink to="/signup" className="links">
+          Sign Up
+        </NavLink>
+      </nav>
+    </>
   );
 }
 

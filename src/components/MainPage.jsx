@@ -1,3 +1,4 @@
+import styles from "../css/MainPage.module.css";
 function MainPage() {
   const handleonClick = () => {
     document.location.href = "/login";
@@ -5,8 +6,8 @@ function MainPage() {
 
   return (
     <>
-      <div className="MainBackground">
-        <ul className="MainPageMaterials">
+      <div className={styles.background}>
+        <ul className={styles.materials}>
           <li></li>
           <li></li>
           <li></li>
@@ -20,8 +21,8 @@ function MainPage() {
           <li></li>
         </ul>
 
-        <div className="MainButtonBox">
-          <button onClick={handleonClick} className="MainButton">
+        <div className={styles.btnContainer}>
+          <button onClick={handleonClick} className={styles.btn}>
             Log In
           </button>
         </div>

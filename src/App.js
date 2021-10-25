@@ -1,7 +1,7 @@
 // <<<<<<< kaylin
-// import { BrowserRouter as Router, Route, Switch, Link, BrowserRouter } from "react-router-dom";
-// import Todo from './components/Todo';
-// import Login from './components/Login';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Todo from "./components/Todo";
+import Login from "./components/Login";
 // =======
 // import {
 //   BrowserRouter as Router,
@@ -16,12 +16,9 @@
 
 import MainPage from "./components/MainPage";
 import SignUp from "./components/SignUp";
-import "./components/App.css"
-import { useMediaQuery } from 'react-responsive'
+import "./components/App.css";
 
 // <<<<<<< kaylin
-
-
 
 // // function App() {
 // //   const isMobileDevice = useMediaQuery({
@@ -45,11 +42,8 @@ import { useMediaQuery } from 'react-responsive'
 // //   });
 
 // =======
-// function App() {
-
+function App() {
   return (
-
-
     <>
       <Router>
         <Switch>

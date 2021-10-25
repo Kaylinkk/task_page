@@ -9,13 +9,17 @@ function Todo(props) {
   const [taskList, setTaskList] = useState([]);
 
   return (
-    <>
-      <NavBar />
-      <Greeting />
-      <InputTask taskList={taskList} setTaskList={setTaskList} />
-      <OpenTask taskList={taskList} setTaskList={setTaskList} />
-      <FinsihedTask taskList={taskList} setTaskList={setTaskList} />
-    </>
+    <div className="todo-container">
+      <div>
+        <NavBar />
+        <Greeting />
+        <InputTask taskList={taskList} setTaskList={setTaskList} />
+      </div>
+      <div>
+        <OpenTask taskList={taskList} setTaskList={setTaskList} />
+        <FinsihedTask taskList={taskList} setTaskList={setTaskList} />
+      </div>
+    </div>
   );
 }
 

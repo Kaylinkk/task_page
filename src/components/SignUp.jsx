@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Link } from "react-router-dom";
 import Input from "./Input";
 import { ReactComponent as Mail } from "../img/mail.svg";
 import { ReactComponent as User } from "../img/person.svg";
 import { ReactComponent as Password } from "../img/password.svg";
 import NavBar from "./NavBar";
+import styles from "../css/Login.module.css";
 
 function SignUp(props) {
-  document.body.style.background =
-    "linear-gradient(rgba(179,157,219,1) 16%, rgba(221,234,249,1) 100%) fixed";
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -21,15 +20,15 @@ function SignUp(props) {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <NavBar />
-      <div className="box SignupBox">
-        <form onSubmit={handleSubmit}>
-          <h1 className="signUp-title">Sign Up</h1>
+      <div className={styles.SignUpformContainer}>
+        <form onSubmit={handleSubmit} className={styles.SignUpform}>
+          <h1 className={styles.title}>Sign Up</h1>
 
           <Input
             Icon={Mail}
-            className="signUp-inputBox"
+            className={styles.input}
             value={email}
             setValue={setEmail}
             placeholder="e-mail"
@@ -39,7 +38,7 @@ function SignUp(props) {
 
           <Input
             Icon={User}
-            className="signUp-inputBox"
+            className={styles.input}
             value={username}
             setValue={setUsername}
             placeholder="username"
@@ -49,7 +48,7 @@ function SignUp(props) {
 
           <Input
             Icon={Password}
-            className="signUp-inputBox"
+            className={styles.input}
             setValue={setPassword}
             value={password}
             placeholder="password"
@@ -59,7 +58,7 @@ function SignUp(props) {
 
           <Input
             Icon={Password}
-            className="signUp-inputBox"
+            className={styles.input}
             setValue={setPassword}
             value={password}
             placeholder="confirm password"
@@ -68,13 +67,13 @@ function SignUp(props) {
           />
 
           <Link to="/todo">
-            <button className="signUp-button" type="button">
+            <button className={styles.btn} type="button">
               Create Account
             </button>
           </Link>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

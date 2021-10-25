@@ -5,7 +5,7 @@ function Greeting() {
   return (
     <>
       <div className="Greeting-box">
-        <div className="Greeting-welcomeSentence">what is in your mind?</div>
+        <div className="Greeting-welcomeSentence">What is in your mind?</div>
         <ClockContainer />
       </div>
     </>
