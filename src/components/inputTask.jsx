@@ -19,13 +19,13 @@ function InputTask({ taskList, setTaskList }) {
   };
 
   return (
-    <form onSubmit={HandleSubmit} className="InputTask-box">
+    <form onSubmit={HandleSubmit}>
       <input
         value={currentItem}
         onChange={HandleChange}
         placeholder="Enter task here"
         type="text"
-        className="InputTask-input"
+        className="taskInputField"
         name="task"
         required
       />

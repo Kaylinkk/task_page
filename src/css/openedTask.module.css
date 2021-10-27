@@ -5,12 +5,11 @@ img {
 }
 
 .inputContainer {
-  width: 80%;
-  height: auto;
+  /* height: auto; */
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-  margin-left: 10%;
+
   border: 1px solid black;
 }
 
@@ -52,10 +51,17 @@ img {
 .label {
   flex-basis: 95%;
   display: flex;
+  align-items: center;
 }
-.label span {
-  padding-left: 1vw;
-  align-self: center;
+
+.taskItemContent {
+  width: 0;
+  flex: 1;
+  overflow-wrap: break-word;
+  text-align: left;
+  padding: 0 1rem;
+  color: inherit;
+  font-size: var(--content-size);
 }
 
 .deleteBtn,
@@ -87,5 +93,8 @@ img {
 }
 
 .taskContainer input[type="checkbox"] {
+  display: none;
+}
+.hideBtn {
   display: none;
 }

@@ -23,8 +23,8 @@ svg {
   --title-two: "Ubuntu", sans-serif;
 
   /* size */
-  --large-size: 4vw;
-  --medium-size: 2.5vw;
+  --large-size: 3vw;
+  --medium-size: 2vw;
   --content-size: 1.5vw;
   --small-size: 1vw;
 }
@@ -57,13 +57,20 @@ nav {
   color: whitesmoke;
 }
 .todo-container {
-  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 60%;
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+  -ms-overflow-style: none;
+  padding-bottom: 5vw;
 }
-
+.todo-container::-webkit-scrollbar {
+  display: none;
+}
 .input-container {
   display: flex;
   flex-flow: row nowrap;
@@ -87,41 +94,34 @@ nav {
 }
 
 /* InputTask */
-.InputTask-box {
-  width: 80%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  margin-left: 10%;
-  padding-top: 10px;
-}
 
-.InputTask-input {
+.taskInputField {
   width: 100%;
-  height: 30px;
+  /* height: 30px; */
   background-color: white;
   -moz-box-shadow: inset 0 0 1px #000000;
   -webkit-box-shadow: inset 0 0 1px #000000;
   box-shadow: inset 0 0 1px #000000;
   border: 0.1px solid black;
+  font-size: 1.8vw;
+  padding: 0.5rem 0.3rem;
 }
 
 /* Greeting */
 .Greeting-box {
-  width: 80%;
-  height: auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-left: 10%;
-  padding-top: 50px;
+  align-items: center;
+  padding: 0.5rem 0;
 }
 .Greeting-welcomeSentence {
   font-family: var(--title);
-  font-size: var(--title-size);
+  font-size: var(--medium-size);
 }
 
 .Greeting-clock {
   font-family: var(--title);
-  font-size: var(--small-size);
+  font-size: var(--medium-size);
   line-height: 50px;
 }

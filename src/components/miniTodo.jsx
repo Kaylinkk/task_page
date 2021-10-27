@@ -23,7 +23,7 @@ function MiniTodo(props) {
   };
 
   const handleChange = (id) => {
-    if (props.Checked === false) {
+    if (props.checked === false) {
       const tempTaskList = [...props.taskList];
       props.taskList.map((task) => {
         const miniIndex = tempTaskList[getIndex(task.id)].miniTodo.findIndex(
@@ -46,12 +46,12 @@ function MiniTodo(props) {
           return (
             <div
               className={`${styles.mainTodo} ${styles.miniTodo} ${
-                subTask.isChecked || props.Checked ? styles.finished : ""
+                subTask.isChecked || props.checked ? styles.finished : ""
               }`}
               key={subTask.id + props.task.id}
             >
               <label className={styles.label}>
-                {subTask.isChecked || props.Checked ? (
+                {subTask.isChecked || props.checked ? (
                   <Checked />
                 ) : (
                   <UnChecked />
@@ -67,7 +67,7 @@ function MiniTodo(props) {
                 className={styles.deleteBtn}
                 onClick={() => RemoveTask(subTask.id)}
               >
-                <Delete></Delete>
+                <Delete />
               </button>
             </div>
           );
