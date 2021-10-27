@@ -3,10 +3,10 @@ import React from "react";
 import { ReactComponent as Delete } from "../img/delete.svg";
 import { ReactComponent as UnChecked } from "../img/unchecked.svg";
 import addSign from "../img/plus.svg";
-
+import { ReactComponent as Checked } from "../img/checkbox.svg";
 import styles from "../css/openedTask.module.css";
 
-function MainTodo({ task, taskList, setTaskList }) {
+function MainTodo({ task, taskList, setTaskList, checked }) {
   const handleChange = (task) => {
     // check the item
     // if
@@ -42,12 +42,15 @@ function MainTodo({ task, taskList, setTaskList }) {
   return (
     <div className={styles.mainTodo}>
       <label className={styles.label}>
-        <UnChecked />
+        {checked ? <Checked /> : <UnChecked />}
         <input type="checkbox" onChange={() => handleChange(task)} />
-        <span>{task.data}</span>
+        <span className={styles.taskItemContent}>{task.data}</span>
       </label>
-      <button className={styles.addBtn} onClick={() => handleAdd(task)}>
-        <img src={addSign} className="addSign" alt="add Mini todo"></img>
+      <button
+        className={`${styles.addBtn} ${checked ? styles.hideBtn : ""}`}
+        onClick={() => handleAdd(task)}
+      >
+        <img src={addSign} className="addSign" alt="add Mini todo" />
       </button>
       <button className={styles.deleteBtn} onClick={() => RemoveTask(task.id)}>
         <Delete />
