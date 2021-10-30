@@ -5,15 +5,19 @@ import { ReactComponent as User } from "../img/person.svg";
 import { ReactComponent as Password } from "../img/password.svg";
 import NavBar from "../components/NavBar";
 import styles from "../css/Login.module.css";
+import * as auth from "../services/authService";
+
 function Login(props) {
   // document.body.style.backgroundColor = "#9C9CD3";
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+
+  const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("username", username);
-    console.log("password", password);
+
+    setCurrentUser(auth.login(currentUser));
+    console.log("currentUser", currentUser);
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
   };
 
   return (
@@ -26,24 +30,23 @@ function Login(props) {
           <Input
             Icon={User}
             className={styles.input}
-            value={username}
-            setValue={setUsername}
-            placeholder="username"
-            type="text"
-            required
+            value={currentUser.email}
+            setValue={setCurrentUser}
+            placeholder="email"
+            name="email"
           />
 
           <Input
             Icon={Password}
             className={styles.input}
-            setValue={setPassword}
-            value={password}
+            setValue={setCurrentUser}
+            value={currentUser.password}
             placeholder="password"
-            type="text"
-            required
+            type="password"
+            name="password"
           />
 
-          <button className={styles.btn} type="button">
+          <button className={styles.btn} type="submit">
             Log In
           </button>
         </form>

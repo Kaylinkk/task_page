@@ -53,6 +53,10 @@ img {
   display: flex;
   align-items: center;
 }
+.label svg:hover {
+  /* transition: all 0.5s; */
+  border: 2px solid black;
+}
 
 .taskItemContent {
   width: 0;
@@ -71,6 +75,14 @@ img {
   cursor: pointer;
   flex-basis: 4%;
 }
+.addBtn:hover {
+  background: whitesmoke;
+  transition: all 0.5s;
+  border-radius: 10px;
+  /* box-shadow: 0px 6px 15px #0000ff61; */
+  padding: 0.01rem;
+  color: #ffffff;
+}
 
 .add .taskContainer:nth-child(even),
 .miniTodo:nth-child(even) {
@@ -79,6 +91,7 @@ img {
 }
 
 .deleteBtn:hover {
+  transition: all 0.5s;
   fill: var(--NavBar-color);
 }
 .finished {

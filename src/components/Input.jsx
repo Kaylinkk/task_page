@@ -1,13 +1,15 @@
 import React from "react";
 
-function Input({
-  placeholder,
-  type = "text",
-  value,
-  handleChange,
-  Icon,
-  setValue,
-}) {
+function Input({ placeholder, type = "text", value, Icon, setValue, name }) {
+  const handleChange = (e) => {
+    e.preventDefault();
+
+    const { name, value } = e.target;
+    setValue((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
   return (
     <div className="input-container">
       <Icon></Icon>
@@ -15,7 +17,10 @@ function Input({
         placeholder={placeholder}
         type={type}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        name={name}
+        // onChange={(e) => setValue({user[index]:e.target.value})}
+        onChange={handleChange}
+        required
       />
     </div>
   );
