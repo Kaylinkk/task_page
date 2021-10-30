@@ -1,10 +1,15 @@
 import { React, useState } from "react";
+import Dictaphone from "./Speech";
 
 function InputTask({ taskList, setTaskList }) {
   const [currentItem, setCurrentItem] = useState("");
   const HandleChange = (event) => {
     setCurrentItem(event.target.value);
   };
+
+  function handleSpeechToText(value) {
+    setCurrentItem(value);
+  }
 
   const HandleSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +34,7 @@ function InputTask({ taskList, setTaskList }) {
         name="task"
         required
       />
+      <Dictaphone setTranscript={handleSpeechToText} />
     </form>
   );
 }
