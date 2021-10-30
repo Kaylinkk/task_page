@@ -1,22 +1,28 @@
 import React, { useState } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
 import Input from "./Input";
 import { ReactComponent as Mail } from "../img/mail.svg";
 import { ReactComponent as User } from "../img/person.svg";
 import { ReactComponent as Password } from "../img/password.svg";
 import NavBar from "./NavBar";
 import styles from "../css/Login.module.css";
+import * as auth from "../services/authService";
 
 function SignUp(props) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   const handleSubmit = (e) => {
+    console.log("asdasdasd");
     e.preventDefault();
-    console.log("username", username);
-    console.log("password", password);
-    console.log("eamil", email);
+    console.log("user", user);
+    const response = auth.register(user);
   };
 
   return (
@@ -25,52 +31,47 @@ function SignUp(props) {
       <div className={styles.SignUpformContainer}>
         <form onSubmit={handleSubmit} className={styles.SignUpform}>
           <h1 className={styles.title}>Sign Up</h1>
-
           <Input
             Icon={Mail}
             className={styles.input}
-            value={email}
-            setValue={setEmail}
+            value={user.email}
+            setValue={setUser}
             placeholder="e-mail"
-            type="text"
-            required
+            name="email"
           />
 
           <Input
             Icon={User}
             className={styles.input}
-            value={username}
-            setValue={setUsername}
+            value={user.username}
+            setValue={setUser}
             placeholder="username"
-            type="text"
-            required
+            name="username"
           />
 
           <Input
             Icon={Password}
             className={styles.input}
-            setValue={setPassword}
-            value={password}
+            value={user.password}
+            setValue={setUser}
             placeholder="password"
-            type="text"
-            required
+            type="password"
+            name="password"
           />
 
           <Input
             Icon={Password}
             className={styles.input}
-            setValue={setPassword}
-            value={password}
+            value={user.confirmPassword}
+            setValue={setUser}
             placeholder="confirm password"
-            type="text"
-            required
+            type="password"
+            name="confirmPassword"
           />
 
-          <Link to="/todo">
-            <button className={styles.btn} type="button">
-              Create Account
-            </button>
-          </Link>
+          <button className={styles.btn} type="submit">
+            Create Account
+          </button>
         </form>
       </div>
     </div>
