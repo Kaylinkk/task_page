@@ -1,50 +1,18 @@
-// <<<<<<< kaylin
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Todo from "./components/Todo";
 import Login from "./components/Login";
-// =======
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Switch,
-//   Link,
-//   BrowserRouter,
-// } from "react-router-dom";
-// import NavBar from "./NavBar";
-// import Todo from "./components/Todo";
-// import Login from "./components/Login";
-
+import { ToastContainer } from "react-toastify";
+import { React, useState } from "react";
 import MainPage from "./components/MainPage";
 import SignUp from "./components/SignUp";
 import "./components/App.css";
-
-// <<<<<<< kaylin
-
-// // function App() {
-// //   const isMobileDevice = useMediaQuery({
-// //     query: "(min-device-width: 480px)",
-// //   });
-
-// //   const isTabletDevice = useMediaQuery({
-// //     query: "(min-device-width: 768px)",
-// //   });
-
-// //   const isLaptop = useMediaQuery({
-// //     query: "(min-device-width: 1024px)",
-// //   });
-
-// //   const isDesktop = useMediaQuery({
-// //     query: "(min-device-width: 1200px)",
-// //   });
-
-// //   const isBigScreen = useMediaQuery({
-// //     query: "(min-device-width: 1201px )",
-// //   });
-
-// =======
+import ThemeContext from "./context/themeContext";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
+  const [theme, setTheme] = useState("light");
   return (
-    <>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <ToastContainer />
       <Router>
         <Switch>
           <Route exact path="/" component={MainPage} />
@@ -53,7 +21,7 @@ function App() {
           <Route path="/todo" component={Todo} />
         </Switch>
       </Router>
-    </>
+    </ThemeContext.Provider>
   );
 }
 

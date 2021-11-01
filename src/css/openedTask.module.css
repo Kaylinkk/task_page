@@ -1,7 +1,6 @@
 .inputContainer svg,
 img {
   width: 2vw;
-  height: 2vw;
 }
 
 .inputContainer {
@@ -14,11 +13,16 @@ img {
 }
 
 .title {
-  background-color: var(--NavBar-color);
   color: white;
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
+}
+.titleLight {
+  background-color: var(--NavBar-color);
+}
+.titleDark {
+  background-color: var(--NavBar-dark-color);
 }
 .selectAllCheckBox {
   display: inline-block;
@@ -41,12 +45,24 @@ img {
   padding: 0.75vw;
 }
 .miniTodo {
-  background-color: white;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5vw;
   padding-left: 3vw;
+}
+.lessThan5 {
+  background-color: green;
+  opacity: 0.4;
+}
+.lessThanHour {
+  background-color: yellow;
+  opacity: 0.4;
+}
+.moreThanHour {
+  background-color: red;
+  opacity: 0.4;
 }
 .label {
   flex-basis: 95%;
@@ -56,6 +72,30 @@ img {
 .label svg:hover {
   /* transition: all 0.5s; */
   border: 2px solid black;
+}
+.labelMini {
+  flex-basis: 5%;
+  display: flex;
+  align-items: center;
+}
+.labelMini svg:hover {
+  /* transition: all 0.5s; */
+  border: 2px solid black;
+}
+.miniTodo label {
+  flex-basis: 5%;
+}
+.miniTodo form {
+  flex-basis: 90%;
+}
+.miniTodo form input {
+  width: 100%;
+
+  overflow-wrap: break-word;
+  text-align: left;
+  padding: 0 1rem;
+  color: inherit;
+  font-size: var(--content-size);
 }
 
 .taskItemContent {
@@ -83,7 +123,9 @@ img {
   padding: 0.01rem;
   color: #ffffff;
 }
-
+.taskContainer {
+  border: 0.5px solid black;
+}
 .add .taskContainer:nth-child(even),
 .miniTodo:nth-child(even) {
   background-color: var(--light-grey);
@@ -101,7 +143,7 @@ img {
 
 .mainTodo:hover,
 .miniTodo:hover {
-  background: var(--skyblue);
+  opacity: 0.6;
   color: var(--dark-purple);
 }
 

@@ -8,8 +8,6 @@ import styles from "../css/openedTask.module.css";
 
 function MainTodo({ task, taskList, setTaskList, checked }) {
   const handleChange = (task) => {
-    // check the item
-    // if
     const newList = taskList.map((item) => {
       if (task.id === item.id) {
         item.isChecked = !item.isChecked;
@@ -22,11 +20,12 @@ function MainTodo({ task, taskList, setTaskList, checked }) {
   const RemoveTask = (id) => {
     setTaskList(taskList.filter((task) => task.id !== id));
   };
+
   const handleAdd = (task) => {
     const tempMini = [...task.miniTodo];
     tempMini.push({
       id: task.id + "" + task.miniTodo.length,
-      data: "sample Text",
+      data: "Sample Text",
       isChecked: false,
     });
     const newList = taskList.map((item) => {
@@ -39,8 +38,18 @@ function MainTodo({ task, taskList, setTaskList, checked }) {
     console.log(taskList);
   };
 
+  const sinceCreated = (todo) => {
+    if (Date.now() - todo.created < 300000) {
+      return styles.lessThan5;
+    } else if (Date.now() - todo.created < 3600000) {
+      return styles.lessThanHour;
+    } else {
+      return styles.moreThanHour;
+    }
+  };
+
   return (
-    <div className={styles.mainTodo}>
+    <div className={`${styles.mainTodo} ${sinceCreated(task)}`}>
       <label className={styles.label}>
         {checked ? <Checked /> : <UnChecked />}
         <input type="checkbox" onChange={() => handleChange(task)} />

@@ -1,9 +1,11 @@
-import React from "react";
+import { React, useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
+import { ReactComponent as MicroPhone } from "../img/microphone.svg";
 
-const Dictaphone = ({ setTranscript }) => {
+const Dictaphone = ({ setTranscript, setValue }) => {
+  const [micStatus, setMicStatus] = useState(false);
   const {
     transcript,
     listening,
@@ -14,22 +16,28 @@ const Dictaphone = ({ setTranscript }) => {
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
   }
+  const handleClick = (e) => {
+    resetTranscript();
+    console.log(micStatus);
+    if (!micStatus) {
+      SpeechRecognition.startListening();
+      setMicStatus(!micStatus);
+    }
+    if (micStatus) {
+      SpeechRecognition.stopListening();
 
+      setTranscript(transcript);
+      // setValue(transcript);
+      setMicStatus(!micStatus);
+    }
+  };
   return (
     <div>
-      <p>Microphone: {listening ? "on" : "off"}</p>
-
-      <button onClick={SpeechRecognition.startListening}>Start</button>
-      <button
-        onClick={() => {
-          SpeechRecognition.stopListening();
-          setTranscript(transcript);
-        }}
-      >
-        Stop
-      </button>
-      <button onClick={resetTranscript}>Reset</button>
-      <p>{transcript}</p>
+      <MicroPhone
+        onClick={handleClick}
+        className={listening ? "mic-on" : "mic-off"}
+      />
+      {listening ? setValue(transcript) : resetTranscript}
     </div>
   );
 };
