@@ -8,7 +8,12 @@ import TaskTitle from "./TaskTitle";
 function OpenTask(props) {
   return (
     <div className={styles.inputContainer}>
-      <TaskTitle title="OPEN TASK" />
+      <TaskTitle
+        title="OPEN TASK"
+        taskList={props.taskList}
+        setTaskList={props.setTaskList}
+        bool={false}
+      />
 
       {props.taskList.map((task) => {
         return (

@@ -1,14 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import FinsihedTask from "./finishedTask";
 import OpenTask from "./openedTask";
 import InputTask from "./inputTask.jsx";
 import Greeting from "./Greeting";
 import NavBar from "./NavBar";
+import ThemeContext from "../context/themeContext";
 function Todo(props) {
-  document.body.style.backgroundColor = "#F1F1F9";
+  const { theme, setTheme } = useContext(ThemeContext);
   const [taskList, setTaskList] = useState([]);
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    setTaskList(currentUser.taskList);
+  }, []);
+
+  useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
     localStorage.setItem(
       currentUser.email,
       JSON.stringify({ ...currentUser, taskList })
@@ -18,8 +25,9 @@ function Todo(props) {
       JSON.stringify({ ...currentUser, taskList })
     );
   }, [taskList]);
+
   return (
-    <div>
+    <div className={`todo-container${theme === "dark" ? "--dark" : "--light"}`}>
       <NavBar />
       <div className="todo-container">
         <Greeting />

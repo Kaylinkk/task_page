@@ -7,7 +7,12 @@ import TaskTitle from "./TaskTitle";
 function FinishedTask(props) {
   return (
     <div className={styles.inputContainer}>
-      <TaskTitle title="FINISHED TASK" />
+      <TaskTitle
+        title="FINISHED TASK"
+        taskList={props.taskList}
+        setTaskList={props.setTaskList}
+        bool={true}
+      />
 
       {props.taskList.map(
         (task) =>

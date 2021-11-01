@@ -18,7 +18,6 @@ function Input({ placeholder, type = "text", value, Icon, setValue, name }) {
         type={type}
         value={value}
         name={name}
-        // onChange={(e) => setValue({user[index]:e.target.value})}
         onChange={handleChange}
         required
       />
